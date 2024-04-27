@@ -1,6 +1,11 @@
 import Layout from "./Layout/Layout";
 import MainContent from "./Layout/MainContent";
 import Sidebar from "./Layout/Sidebar";
+import MainList from "./List/MainList";
+import HiddenAuthor from "./List/authors/HiddenAuthor";
+import HiddenBook from "./List/books/HiddenBook";
+import { authors } from "./List/data/authors";
+import { books } from "./List/data/books";
 
 const LayoutComponents = () => {
     return (
@@ -25,6 +30,13 @@ const LayoutComponents = () => {
                         <MainContent />
                     </Layout>
                 </li>
+                <li>List items</li>
+               <li>
+                <MainList items={books} sourceName={'book'} ItemComponent={HiddenBook} />
+               </li>
+               <li>
+                <MainList items={authors} sourceName={'author'} ItemComponent={HiddenAuthor} />
+               </li>
             </ul>
             
         </div>
